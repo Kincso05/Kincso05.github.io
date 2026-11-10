@@ -13,7 +13,7 @@
       { "technology": "AI", "adoptionYear": 2023, "saturation": 25 }
     ]
   },
-  "mark": { "type": "bar", "cornerRadiusTopRight: 4, "cornerRadiusBottomRight: 4 },
+  "mark": { "type": "bar", "cornerRadiusTopRight": 4, "cornerRadiusBottomRight": 4 },
   "encoding": {
     "x": { "field": "saturation", "type": "quantitative", "title": "Adoption %" },
     "y": { "field": "technology", "type": "ordinal", "sort": "-x", "title": null },
