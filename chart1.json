@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chapter 1: The Awakening - Population Growth",
+  "width": 600,
   "data": {
     "values": [
       { "year": 1950, "population": 2.5 },

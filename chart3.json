@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chapter 3: The Innovation - Technology Adoption",
+  "width": 600,
   "data": {
     "values": [
       { "technology": "Electricity", "adoptionYear": 1925, "saturation": 100 },

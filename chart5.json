@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chapter 5: The Hope - Renewable Energy Growth",
+  "width": 600,
   "data": {
     "values": [
       { "year": 2000, "solar": 1, "wind": 17, "hydro": 275, "other": 40 },

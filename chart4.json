@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Chapter 4: The Consequence - CO2 Emissions by Region",
+  "width": 600,
   "data": {
     "values": [
       { "region": "North America", "1990": 5.8, "2000": 6.2, "2010": 5.9, "2020": 5.1 },
