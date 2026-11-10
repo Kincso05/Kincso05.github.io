@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chapter 1: The Awakening - Population Growth",
+  "data": {
+    "values": [
+      { "year": 1950, "population": 2.5 },
+      { "year": 1960, "population": 3.0 },
+      { "year": 1970, "population": 3.7 },
+      { "year": 1980, "population": 4.4 },
+      { "year": 1990, "population": 5.3 },
+      { "year": 2000, "population": 6.1 },
+      { "year": 2010, "population": 6.9 },
+      { "year": 2020, "population": 7.8 }
+    ]
+  },
+  "mark": { "type": "line", "point": true, "color": "#2c3e50", "strokeWidth": 3 },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": { "field": "population", "type": "quantitative", "title": "Billions" },
+    "tooltip": [{ "field": "year" }, { "field": "population", "format": ".1f" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

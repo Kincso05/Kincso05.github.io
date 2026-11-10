@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chapter 2: The Migration - Urban vs Rural",
+  "data": {
+    "values": [
+      { "year": 1950, "urban": 30, "rural": 70 },
+      { "year": 1960, "urban": 34, "rural": 66 },
+      { "year": "1970", "urban": 37, "rural": 63 },
+      { "year": "1980", "urban": 40, "rural": 60 },
+      { "year": "1990", "urban": 43, "rural": 57 },
+      { "year": "2000", "urban": 47, "rural": 53 },
+      { "year": "2010", "urban": 52, "rural": 48 },
+      { "year": "2020", "urban": 56, "rural": 44 }
+    ]
+  },
+  "transform": [
+    { "fold": ["urban", "rural"], "as": ["type", "percentage"] }
+  ],
+  "mark": { "type": "area", "opacity": 0.7 },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": { "field": "percentage", "type": "quantitative", "title": "Population %", "stack": true },
+    "color": { "field": "type", "type": "nominal", "scale": { "range": ["#e74c3c", "#27ae60"] }, "title": "Area" },
+    "tooltip": [{ "field": "year" }, { "field": "type" }, { "field": "percentage" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

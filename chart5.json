@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Chapter 5: The Hope - Renewable Energy Growth",
+  "data": {
+    "values": [
+      { "year": 2000, "solar": 1, "wind": 17, "hydro": 275, "other": 40 },
+      { "year": 2005, "solar": 5, "wind": 59, "hydro": 300, "other": 45 },
+      { "year": 2010, "solar": 40, "wind": 198, "hydro": 350, "other": 55 },
+      { "year": 2015, "solar": 227, "wind": 433, "hydro": 390, "other": 70 },
+      { "year": 2020, "solar": 760, "wind": 743, "hydro": 430, "other": 90 },
+      { "year": 2023, "solar": 1400, "wind": 1020, "hydro": 450, "other": 110 }
+    ]
+  },
+  "transform": [
+    { "fold": ["solar", "wind", "hydro", "other"], "as": ["source", "capacity"] }
+  ],
+  "mark": { "type": "area", "opacity": 0.8 },
+  "encoding": {
+    "x": { "field": "year", "type": "ordinal", "title": "Year" },
+    "y": { "field": "capacity", "type": "quantitative", "title": "Capacity (GW)", "stack": true },
+    "color": { "field": "source", "type": "nominal", "scale": { "range": ["#f39c12", "#3498db", "#27ae60", "#9b59b6"] }, "title": "Source" },
+    "tooltip": [{ "field": "year" }, { "field": "source" }, { "field": "capacity" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

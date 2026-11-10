@@ -3,24 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vega-Lite Visualization</title>
+  <title>The Great Transition: A Data Story</title>
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background: #fafafa; }
-    #vis { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; max-width: 800px; margin: 0 auto; }
-    h1 { text-align: center; color: #333; font-weight: 500; }
+    body { font-family: 'Georgia', serif; line-height: 1.7; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: #fdfdfd; color: #2c2c2c; }
+    h1 { font-family: 'Helvetica Neue', sans-serif; font-weight: 300; font-size: 2.5rem; text-align: center; color: #1a1a2e; margin-bottom: 0.5rem; }
+    .subtitle { text-align: center; color: #666; font-style: italic; margin-bottom: 3rem; font-size: 1.1rem; }
+    .chapter { margin: 4rem 0; }
+    .chapter-title { font-family: 'Helvetica Neue', sans-serif; font-weight: 400; font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    .chart-container { background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 20px; margin: 2rem 0; }
+    .story-text { font-size: 1.05rem; text-align: justify; margin: 1.5rem 0; }
+    .story-text p { margin: 1rem 0; }
+    .drop-cap::first-letter { float: left; font-size: 3.5rem; line-height: 0.85; padding-right: 0.1em; color: #3498db; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
+    .epilogue { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #eee; color: #888; font-style: italic; }
+    @media (max-width: 600px) { .drop-cap::first-letter { float: none; font-size: inherit; color: inherit; } }
   </style>
 </head>
 <body>
-  <div id="vis"></div>
+  <h1>The Great Transition</h1>
+  <p class="subtitle">How Humanity Rewrote Its Future — A Story in Five Charts</p>
+
+  <div class="chapter">
+    <h2 class="chapter-title">Chapter 1: The Awakening</h2>
+    <div class="chart-container" id="vis1"></div>
+    <div class="story-text">
+      <p class="drop-cap">In the quiet of a 1950 morning, the world held two and a half billion souls. Each life was a universe — a mother in Mumbai singing a lullaby, a farmer in Iowa watching corn sway, a child in Lagos chasing a paper kite. The number seemed vast then, immutable, a ceiling set by nature itself.</p>
+      <p>But beneath the surface, something stirred. Medicine conquered smallpox. Vaccines turned childhood from a gauntlet into a promise. The Green Revolution turned barren fields into oceans of wheat. And slowly, inexorably, the needle moved. Three billion. Four. Five. By the time the millennium turned, six billion hearts beat across the planet. Today, nearly eight billion.</p>
+      <p>This was not merely growth. It was a fundamental rewriting of what human civilization could contain. Every additional billion brought new hands to build, new minds to dream, new voices to sing. But it also brought new mouths to feed, new lungs to breathe air thickened by progress, new dreams that demanded energy the Earth had stored for millions of years.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2 class="chapter-title">Chapter 2: The Migration</h2>
+    <div class="chart-container" id="vis2"></div>
+    <div class="story-text">
+      <p class="drop-cap">The village elder in 1950 would not recognize his great-granddaughter's world. She does not wake to roosters but to alarms. She does not fetch water from a well but turns a tap. Her neighbors are not the families who have lived beside hers for generations, but strangers from a hundred villages, a dozen countries, all packed into towers of glass and steel.</p>
+      <p>Humanity crossed a threshold in 2007 — the first year more people lived in cities than in countryside. The great migration was not a single journey but billions of individual decisions: a young man leaving his rice paddy for a factory in Shenzhen, a family fleeing drought in the Sahel for the slums of Lagos, a graduate choosing London over her hometown in Ohio.</p>
+      <p>Cities became engines of innovation, concentrating minds until ideas sparked like flint on steel. But they also became furnaces, consuming resources at a pace no village ever could. The rural percentage shrank — seventy percent, sixty, fifty, forty-four — and with each point, the distance between human life and the natural world that sustained it grew wider.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2 class="chapter-title">Chapter 3: The Innovation</h2>
+    <div class="chart-container" id="vis3"></div>
+    <div class="story-text">
+      <p class="drop-cap">Fire took a million years to master. The wheel, thousands. But electricity? It took barely a century to go from Edison's filament to a world that panics when the WiFi flickers. The telephone needed fifty years to reach half of American homes. The smartphone did it in seven.</p>
+      <p>Each wave of technology arrived faster than the last, riding the exponential curve of its predecessors. The personal computer democratized computation. The internet democratized information. The smartphone put both in every pocket. Now artificial intelligence promises — or threatens — to democratize cognition itself.</p>
+      <p>But adoption is not uniform. While Silicon Valley debates AI ethics, two billion people still cook over open fires. While some nations fret over screen time, others leapfrog landlines straight to mobile banking. The curve is steep, but its benefits remain unevenly distributed — a reminder that innovation without inclusion merely deepens the divides it claims to bridge.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2 class="chapter-title">Chapter 4: The Consequence</h2>
+    <div class="chart-container" id="vis4"></div>
+    <div class="story-text">
+      <p class="drop-cap">The atmosphere does not negotiate. It does not care about GDP or geopolitics or the quarterly earnings of energy companies. It simply records: carbon dioxide, methane, nitrous oxide — accumulating, trapping, warming.</p>
+      <p>For decades, the wealthy nations wrote the emissions story. Their smokestacks darkened skies over Pittsburgh and Manchester, their highways stitched continents together with ribbons of exhaust. But as the century turned, the pen passed. Asia's industrial awakening — lifting hundreds of millions from poverty — wrote new chapters in carbon. China's curve bent sharply upward. India's followed.</p>
+      <p>Yet the old authors have not stopped writing. Per capita, the average American still emits more than twice the global average. The atmosphere sums it all: thirty-seven billion tons a year and rising. Glaciers retreat. Coral reefs bleach. Storms gather strength over warming seas. The bill for two centuries of fossil-fueled prosperity has come due, and it is being presented to those who benefited least.</p>
+    </div>
+  </div>
+
+  <div class="chapter">
+    <h2 class="chapter-title">Chapter 5: The Hope</h2>
+    <div class="chart-container" id="vis5"></div>
+    <div class="story-text">
+      <p class="drop-cap">But this is not a story of inevitable decline. Look again at the curve — not the emissions curve, but the one beside it. Solar capacity, a mere gigawatt in 2000, has grown fourteen hundred-fold. Wind, seventeen gigawatts, now crosses a thousand. The sun and wind, ancient and inexhaustible, are finally being harvested at scale.</p>
+      <p>The transition is messy. Grids built for centralized power struggle with distributed generation. Batteries are still too expensive. Critical minerals concentrate in few hands. Politics lags physics. Yet the economics have flipped: new solar and wind are now cheaper than new coal and gas almost everywhere. The stone age did not end for lack of stones; the fossil age will not end for lack of fossils.</p>
+      <p>In a village in Rajasthan, a solar pump draws water for crops that fed a family who sent a daughter to engineering school. In a favela in Rio, a cooperative installs rooftop panels that power a community center where children learn to code. In a lab in Copenhagen, researchers chase fusion while pragmatists deploy heat pumps. The great transition is not a single event but millions of acts of courage, imagination, and stubborn hope.</p>
+      <p>The eight billionth child was born in 2022. She inherits a planet warming, yes — but also a planet where the tools to heal it exist, where the knowledge is shared, where the story's next chapter is still being written. By her.</p>
+    </div>
+  </div>
+
+  <div class="epilogue">
+    <p>Data sources: UN World Population Prospects, World Bank, IEA, Our World in Data<br>
+    Visualizations built with Vega-Lite | Story crafted for human eyes and machine readability</p>
+  </div>
 
   <script>
-    fetch('chart.json')
-      .then(response => response.json())
-      .then(spec => vegaEmbed('#vis', spec, { actions: { editor: true, source: true, compiled: false } }))
-      .catch(console.error);
+    const charts = [
+      { id: 'vis1', file: 'chart1.json' },
+      { id: 'vis2', file: 'chart2.json' },
+      { id: 'vis3', file: 'chart3.json' },
+      { id: 'vis4', file: 'chart4.json' },
+      { id: 'vis5', file: 'chart5.json' }
+    ];
+
+    charts.forEach(({ id, file }) => {
+      fetch(file)
+        .then(r => r.json())
+        .then(spec => vegaEmbed('#' + id, spec, { actions: { editor: true, source: true, compiled: false } }))
+        .catch(console.error);
+    });
   </script>
 </body>
 </html>
