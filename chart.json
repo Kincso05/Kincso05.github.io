@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Simple bar chart example",
+  "data": {
+    "values": [
+      { "category": "A", "value": 28 },
+      { "category": "B", "value": 55 },
+      { "category": "C", "value": 43 },
+      { "category": "D", "value": 91 },
+      { "category": "E", "value": 81 },
+      { "category": "F", "value": 53 },
+      { "category": "G", "value": 19 },
+      { "category": "H", "value": 87 }
+    ]
+  },
+  "mark": { "type": "bar", "cornerRadiusTopRight": 4, "cornerRadiusBottomRight": 4 },
+  "encoding": {
+    "x": { "field": "category", "type": "ordinal", "axis": { "labelAngle": 0 } },
+    "y": { "field": "value", "type": "quantitative", "axis": { "grid": true } },
+    "color": { "field": "category", "type": "nominal", "legend": null },
+    "tooltip": [{ "field": "category", "type": "ordinal" }, { "field": "value", "type": "quantitative" }]
+  },
+  "config": { "view": { "stroke": null } }
+}
