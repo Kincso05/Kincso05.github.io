@@ -13,10 +13,9 @@
     .subtitle { text-align: center; color: #666; font-style: italic; margin-bottom: 3rem; font-size: 1.1rem; }
     .chapter { margin: 4rem 0; }
     .chapter-title { font-family: 'Helvetica Neue', sans-serif; font-weight: 400; font-size: 1.5rem; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
-    .chart-container { background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 20px; margin: 2rem 0; display: flex; justify-content: center; }
-    .chart-container > div { max-width: 100%; }
-    .chart-container .vega-embed { display: flex; justify-content: center; width: 100%; }
-    .chart-container .vega-embed > div { margin: 0 auto; }
+    .chart-container { background: white; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 20px; margin: 2rem 0; text-align: center; }
+    .chart-container .vega-embed { display: inline-block; }
+    .chart-container canvas, .chart-container svg { display: block; margin: 0 auto; }
     .story-text { font-size: 1.05rem; text-align: justify; margin: 1.5rem 0; }
     .story-text p { margin: 1rem 0; }
     .drop-cap::first-letter { float: left; font-size: 3.5rem; line-height: 0.85; padding-right: 0.1em; color: #3498db; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
@@ -96,7 +95,10 @@
     charts.forEach(({ id, file }) => {
       fetch(file)
         .then(r => r.json())
-        .then(spec => vegaEmbed('#' + id, spec, { actions: { editor: true, source: true, compiled: false } }))
+        .then(spec => vegaEmbed('#' + id, spec, { 
+          actions: { editor: true, source: true, compiled: false },
+          renderer: 'svg'
+        }))
         .catch(console.error);
     });
   </script>
